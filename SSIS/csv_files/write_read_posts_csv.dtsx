@@ -1,0 +1,3056 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/11/2021 3:57:30 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MINIPC"
+  DTS:CreatorName="MINIPC\domin"
+  DTS:DTSID="{FAE16FB9-2287-43EB-B921-95C5F4DFE55B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="8192"
+  DTS:ObjectName="write_read_csv"
+  DTS:PackageType="5"
+  DTS:VersionBuild="111"
+  DTS:VersionGUID="{B411E69A-DD5D-4BBD-8736-80ADE9E864A3}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File: Error_Read_Body.txt]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{29A252F9-EF8B-4983-A471-0A140AFE2470}"
+      DTS:ObjectName="Flat File: Error_Read_Body.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="0"
+          DTS:ConnectionString="C:\Users\domin\OneDrive\Dokumente\Git\visualstudioprojects\simple_examples\custom_resources\export_and_load_posts_csv_area\errorlogs\Error_Read_Body.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="timestamp"
+              DTS:DTSID="{24F22352-14F7-455E-A6DA-7D1FF7545051}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{26F2965D-8A4E-40D8-8F24-84265C9A75E9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{92BDFDFE-EDE9-4F2A-B73E-30DD4267C95F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Flat File Source Error Output Column"
+              DTS:DTSID="{CCBEAC01-2F44-4054-8A47-4B3C69477A22}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File: Error_Write_Destination.txt]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{5956E6EB-A5CB-4B5B-BEC4-D50EE4ED405B}"
+      DTS:ObjectName="Flat File: Error_Write_Destination.txt">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\domin\OneDrive\Dokumente\Git\visualstudioprojects\simple_examples\custom_resources\export_and_load_posts_csv_area\errorlogs\ErrorOutputOLEDBDestination.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="timestamp"
+              DTS:DTSID="{3136355E-1757-473B-A159-355C85C63996}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{4E8F5398-9EEF-4404-BB5A-ED344EC34461}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AcceptedAnswerId"
+              DTS:DTSID="{12737BFB-63ED-4D06-B5BB-C7C3487755D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AnswerCount"
+              DTS:DTSID="{6A26E944-8DF7-448E-BE9A-C6F79578415E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Body"
+              DTS:DTSID="{F2D43CA7-D48A-40A7-9943-2036CFE6DF51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClosedDate"
+              DTS:DTSID="{7802E072-B4F0-4371-A031-86015C98298C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommentCount"
+              DTS:DTSID="{1DB0E5F9-E783-43EE-96D3-F0D77CE5F704}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommunityOwnedDate"
+              DTS:DTSID="{82A0D8D0-1899-4C23-BE04-00EC9EB3A08D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CreationDate"
+              DTS:DTSID="{A5942737-5D4C-4342-9517-2D98FFC39127}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FavoriteCount"
+              DTS:DTSID="{4DA80C18-05FC-40A5-B298-955103E7A66F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastActivityDate"
+              DTS:DTSID="{B5F25696-0074-4167-883C-B0499260E0F9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditDate"
+              DTS:DTSID="{9E9EBC47-0C3C-4FDA-A9E1-DFBE67A7FC68}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditorDisplayName"
+              DTS:DTSID="{F5333221-26E1-4A54-A28C-BC97D6887A3F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditorUserId"
+              DTS:DTSID="{14C25DFD-200F-40DB-9AA0-F71168D0BE41}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OwnerUserId"
+              DTS:DTSID="{8E9464B4-32DD-49D1-B919-8F372A07FC37}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentId"
+              DTS:DTSID="{6CABAF50-BD0C-41FF-BF03-769416227E70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PostTypeId"
+              DTS:DTSID="{B72F97AE-5C0A-4641-B4D7-97746491350E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{3984F2F1-6F54-4CDE-A139-21DEC503DBBF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="150"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tags"
+              DTS:DTSID="{1F555EFB-84E5-4591-A0E6-C0626BF4A3B4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{F76FED1D-4BDA-4F0F-9734-1CE226052510}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ViewCount"
+              DTS:DTSID="{EEA54AB4-DB39-45E1-8950-6C59B22131BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorCode"
+              DTS:DTSID="{2C283F68-ABF9-469D-8485-C6D75C9DD044}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorColumn"
+              DTS:DTSID="{16A2EA70-591B-4B79-BC03-81A807A99BF9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ErrorDescription"
+              DTS:DTSID="{E1EFC1CE-A142-479C-85E4-B35152889AD4}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File: READ posts.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{08336BDF-FD80-42E9-9803-27B685FAC8F8}"
+      DTS:ObjectName="Flat File: READ posts.csv">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::current_foreach_work_file]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0027__x0027__x0027_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="placeholder">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{955D6F3E-DFBC-49F7-A0A2-722DC8EE60EA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AcceptedAnswerId"
+              DTS:DTSID="{E1F336E8-CCC2-4965-B438-C17624149D1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AnswerCount"
+              DTS:DTSID="{19AD6B19-3F07-4D13-8D88-078CEBD25D15}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Body"
+              DTS:DTSID="{44E7D70B-285E-4956-B434-C096BD24322B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClosedDate"
+              DTS:DTSID="{01E71232-6DB3-430E-A374-708FDC17721B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommentCount"
+              DTS:DTSID="{A6868FA9-C19E-4A34-9270-94883911C2C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommunityOwnedDate"
+              DTS:DTSID="{4E68BDC8-AD15-455E-BEB0-C052ABF79386}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CreationDate"
+              DTS:DTSID="{C5D18845-325E-42ED-B985-5715FC5CE50C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FavoriteCount"
+              DTS:DTSID="{9264CDA7-4A81-4E9D-BDF3-B0A55F27A631}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastActivityDate"
+              DTS:DTSID="{D7AD93EC-3133-49D9-B5E3-E19FD60BBB8C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditDate"
+              DTS:DTSID="{B3C203A5-043A-442E-8BBD-6366CFA08D04}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditorDisplayName"
+              DTS:DTSID="{C72AF014-401F-4FDE-B039-73DB97432E47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditorUserId"
+              DTS:DTSID="{39C9DF10-BF54-45C8-A367-A9913CE007BC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OwnerUserId"
+              DTS:DTSID="{92E76709-878F-489D-9795-5F0A2EE43FDA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentId"
+              DTS:DTSID="{88983103-D8E6-4FD7-BDEB-8AA84678A2FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PostTypeId"
+              DTS:DTSID="{E70FF5FC-04E8-4196-95B9-27D962A08A7D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{3C7730D2-534D-43FC-8639-E0672B0953EC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="150"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tags"
+              DTS:DTSID="{93C17888-9FB2-4B7D-B7F7-4CBE908F61E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{8A2935E5-81B7-4610-9BB6-97D9FAD17676}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ViewCount"
+              DTS:DTSID="{BCC3A378-4502-4D27-A38A-8BEF3EBC996C}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File: WRITE posts.csv]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{94B96AFC-E5C8-4CD7-8B43-30B1E41048E2}"
+      DTS:ObjectName="Flat File: WRITE posts.csv">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::current_file_path]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="8192"
+          DTS:Unicode="True"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0027__x0027__x0027_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="C:\Users\domin\OneDrive\Dokumente\Git\SQL-server-examples\custom_resources\export_and_load_posts_csv_area\posts_1_10.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id"
+              DTS:DTSID="{025DB004-3003-4DDB-84FE-3947D8718030}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AcceptedAnswerId"
+              DTS:DTSID="{725FCA5E-BDD3-4154-854F-BE69E320F672}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AnswerCount"
+              DTS:DTSID="{1AFBDEE5-78D6-4F32-A678-71FF18427CF8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="303"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Body"
+              DTS:DTSID="{FD21EBF7-531A-40E5-84FC-86FAB5B7765E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ClosedDate"
+              DTS:DTSID="{FE1C8C12-FE3A-45FB-A1CD-507527E59E0E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommentCount"
+              DTS:DTSID="{2EDE4D95-9360-43E9-8A89-348BA0A529A8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CommunityOwnedDate"
+              DTS:DTSID="{B845ED23-EEE8-44A4-8DD2-175800B6E3E4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CreationDate"
+              DTS:DTSID="{9E6CF5C6-DD32-4F1E-9247-3D351D224F24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FavoriteCount"
+              DTS:DTSID="{2469FB87-0034-4D1E-BC65-61263F846684}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastActivityDate"
+              DTS:DTSID="{AEB2787C-8267-4493-8D59-943E1F7148B3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="7"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditDate"
+              DTS:DTSID="{55D7B41B-2166-4B05-8C8D-3840830086B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditorDisplayName"
+              DTS:DTSID="{F5FE6A9F-2931-471B-AB53-C49AB083F7E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="LastEditorUserId"
+              DTS:DTSID="{2F1861F2-1AA6-431A-BE9C-116F4C85B226}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OwnerUserId"
+              DTS:DTSID="{8C9A75B8-2783-4D70-AAE6-8FF0E465E524}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ParentId"
+              DTS:DTSID="{D771EC4B-B2A8-4115-8126-6B77803F4E84}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="16"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PostTypeId"
+              DTS:DTSID="{73898E5E-073F-4753-8540-AB8978E39CFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Score"
+              DTS:DTSID="{7CBD3BB0-3351-4595-8DB4-C2D29B4CAB52}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="150"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Tags"
+              DTS:DTSID="{3874EAFC-7D2B-462E-B35B-17CB56A61D9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="250"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Title"
+              DTS:DTSID="{9BFE0BC5-9868-451C-9979-3558C5991CC5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ViewCount"
+              DTS:DTSID="{CE5D5C01-8AA2-4E37-9539-88C1AE7B79CE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.StackOverflow2010]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{FE385010-A20A-47F4-816A-5B68B51DFD83}"
+      DTS:ObjectName="localhost.StackOverflow2010">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=StackOverflow2010;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Logs.log]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{64FB02BE-669A-4E37-8608-16C540633EF8}"
+      DTS:ObjectName="Logs.log">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:FileUsageType="1"
+          DTS:ConnectionString="C:\Users\domin\OneDrive\Dokumente\Git\visualstudioprojects\simple_examples\custom_resources\export_and_load_posts_csv_area\logs\Logs.log" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="localhost.StackOverflow2010"
+      DTS:CreationName="Microsoft.LogProviderSQLServer"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{107FFD1E-C768-43DC-8FDA-6A5469716231}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+    <DTS:LogProvider
+      DTS:ConfigString="Logs.log"
+      DTS:CreationName="Microsoft.LogProviderTextFile"
+      DTS:Description="Writes log entries for events to a CSV file"
+      DTS:DTSID="{D800375A-B0C8-4B6E-8AB1-6042D70E060C}"
+      DTS:ObjectName="SSIS log provider for Text files">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{BC000AFF-4F68-4071-83D9-B4F7AB41BF7F}"
+      DTS:ObjectName="csv_file_folder"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\Users\domin\OneDrive\Dokumente\Git\SQL-server-examples\custom_resources\export_and_load_posts_csv_area\</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{AECAD62A-CD44-4127-B03B-0802FC647362}"
+      DTS:ObjectName="csv_file_name"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">posts</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{2AA79B7F-A6BF-43EE-93AA-520EF3654281}"
+      DTS:ObjectName="num_files"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">5</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{94B33E45-7E98-49BB-AD77-855B2A8C7FF4}"
+      DTS:ObjectName="num_rows_per_file"
+      DTS:Required="True">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">10</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{173E6135-6BEB-49CC-9222-C1DC165D8166}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::csv_file_name] + &quot;_&quot; + (DT_WSTR, 100) @[User::current_from]  + &quot;_&quot; + (DT_WSTR, 100) @[User::current_to]  + &quot;.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="current_file_name">
+      <DTS:VariableValue
+        DTS:DataType="8">posts_1_10.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2B8C4834-A738-499A-8F5E-4F390117CE53}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::csv_file_folder] +  @[User::current_file_name]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="current_file_path">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\domin\OneDrive\Dokumente\Git\SQL-server-examples\custom_resources\export_and_load_posts_csv_area\posts_1_10.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{10BB1C25-C1C1-44EA-B3E7-B24BD20BDA84}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="current_foreach_processed_file">
+      <DTS:VariableValue
+        DTS:DataType="8">placeholder</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BCFF62D5-B560-45E4-AA7D-C43099FF01BA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="current_foreach_work_file">
+      <DTS:VariableValue
+        DTS:DataType="8">placeholder</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C8BB5C8C-1591-40DE-BAB1-497CF243330C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::num_rows_per_file] * @[User::num_files_completed]  + 1"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="current_from">
+      <DTS:VariableValue
+        DTS:DataType="3">1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{24CFFB46-E2B9-44D7-90C2-EB70DF3ECB73}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::current_from] +  @[$Package::num_rows_per_file] - 1"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="current_to">
+      <DTS:VariableValue
+        DTS:DataType="3">10</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BE74FC22-01B1-40CB-866C-85053CDB0600}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::csv_file_folder] + &quot;processed&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="dir_processed">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\domin\OneDrive\Dokumente\Git\SQL-server-examples\custom_resources\export_and_load_posts_csv_area\processed</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D6DFD1B6-5B7A-4F7D-9DF2-1049E3469883}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="num_files_completed">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A7D99CAA-1F2E-4560-9405-78882368D8F5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT &#xA;[Id], &#xA;[AcceptedAnswerId], &#xA;[AnswerCount], &#xA;REPLACE(REPLACE([Body], CHAR(13), ''), CHAR(10), '') AS [Body], &#xA;[ClosedDate], &#xA;[CommentCount], &#xA;[CommunityOwnedDate], &#xA;[CreationDate], &#xA;[FavoriteCount], &#xA;[LastActivityDate], &#xA;[LastEditDate], &#xA;[LastEditorDisplayName], &#xA;[LastEditorUserId], &#xA;[OwnerUserId],&#xA;[ParentId], &#xA;[PostTypeId], &#xA;[Score],&#xA;[Tags],&#xA;[Title], &#xA;[ViewCount]&#xA;FROM dbo.Posts &#xA;ORDER BY id&#xA;OFFSET &quot; + (DT_WSTR, 20) (@[$Package::num_rows_per_file] * @[User::num_files_completed])  + &quot; ROWS&quot; + &quot;&#xA;FETCH NEXT &quot; +  (DT_WSTR, 20) @[$Package::num_rows_per_file] + &quot; ROWS ONLY&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="sql_posts">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT 
+[Id], 
+[AcceptedAnswerId], 
+[AnswerCount], 
+REPLACE(REPLACE([Body], CHAR(13), ''), CHAR(10), '') AS [Body], 
+[ClosedDate], 
+[CommentCount], 
+[CommunityOwnedDate], 
+[CreationDate], 
+[FavoriteCount], 
+[LastActivityDate], 
+[LastEditDate], 
+[LastEditorDisplayName], 
+[LastEditorUserId], 
+[OwnerUserId],
+[ParentId], 
+[PostTypeId], 
+[Score],
+[Tags],
+[Title], 
+[ViewCount]
+FROM dbo.Posts 
+ORDER BY id
+OFFSET 0 ROWS
+FETCH NEXT 10 ROWS ONLY</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">21,7,OnError,19,OnExecStatusChanged,13,OnInformation,27,OnPipelinePostComponentCall,25,OnPipelinePostEndOfRowset,25,OnPipelinePostPrimeOutput,26,OnPipelinePreComponentCall,24,OnPipelinePreEndOfRowset,24,OnPipelinePrePrimeOutput,18,OnPipelineRowsSent,13,OnPostExecute,14,OnPostValidate,12,OnPreExecute,13,OnPreValidate,10,OnProgress,13,OnQueryCancel,12,OnTaskFailed,22,OnVariableValueChanged,9,OnWarning,10,Diagnostic,12,DiagnosticEx</DTS:Property>
+    <DTS:Property
+      DTS:EventName="Diagnostic"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="DiagnosticEx"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnExecStatusChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnProgress"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnQueryCancel"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnVariableValueChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{107FFD1E-C768-43DC-8FDA-6A5469716231}" />
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{D800375A-B0C8-4B6E-8AB1-6042D70E060C}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Read CSV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{47F3F475-1692-4580-B3AB-34E418D25091}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Read CSV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Read CSV\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="8192"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Read CSV\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File: READ posts.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File: READ posts.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Id]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[AcceptedAnswerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AcceptedAnswerId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[AcceptedAnswerId]"
+                      name="AcceptedAnswerId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[AnswerCount]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AnswerCount]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[AnswerCount]"
+                      name="AnswerCount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Body]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Body]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Body]"
+                      name="Body"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ClosedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ClosedDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ClosedDate]"
+                      name="ClosedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CommentCount]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CommentCount]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CommentCount]"
+                      name="CommentCount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CommunityOwnedDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CommunityOwnedDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CommunityOwnedDate]"
+                      name="CommunityOwnedDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CreationDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CreationDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CreationDate]"
+                      name="CreationDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FavoriteCount]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FavoriteCount]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FavoriteCount]"
+                      name="FavoriteCount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastActivityDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastActivityDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastActivityDate]"
+                      name="LastActivityDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditDate]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastEditDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditDate]"
+                      name="LastEditDate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastEditorDisplayName]"
+                      length="40"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditorDisplayName]"
+                      name="LastEditorDisplayName"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditorUserId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastEditorUserId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditorUserId]"
+                      name="LastEditorUserId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[OwnerUserId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OwnerUserId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[OwnerUserId]"
+                      name="OwnerUserId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ParentId]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ParentId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ParentId]"
+                      name="ParentId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PostTypeId]"
+                      dataType="i1"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PostTypeId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PostTypeId]"
+                      name="PostTypeId"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Score]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Score]"
+                      name="Score"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Tags]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tags]"
+                      length="150"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Tags]"
+                      name="Tags"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                      length="250"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ViewCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ViewCount]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ViewCount]"
+                      name="ViewCount"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Id]"
+                      dataType="i2"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AcceptedAnswerId]"
+                      dataType="i4"
+                      name="AcceptedAnswerId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[AnswerCount]"
+                      dataType="i1"
+                      name="AnswerCount" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Body]"
+                      dataType="nText"
+                      name="Body" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ClosedDate]"
+                      dataType="date"
+                      name="ClosedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CommentCount]"
+                      dataType="i1"
+                      name="CommentCount" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CommunityOwnedDate]"
+                      dataType="date"
+                      name="CommunityOwnedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[CreationDate]"
+                      dataType="date"
+                      name="CreationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[FavoriteCount]"
+                      dataType="i2"
+                      name="FavoriteCount" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastActivityDate]"
+                      dataType="date"
+                      name="LastActivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastEditDate]"
+                      dataType="date"
+                      name="LastEditDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      length="40"
+                      name="LastEditorDisplayName" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[LastEditorUserId]"
+                      dataType="i4"
+                      name="LastEditorUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[OwnerUserId]"
+                      dataType="i4"
+                      name="OwnerUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ParentId]"
+                      dataType="i2"
+                      name="ParentId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PostTypeId]"
+                      dataType="i1"
+                      name="PostTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Score]"
+                      dataType="i2"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Tags]"
+                      dataType="wstr"
+                      length="150"
+                      name="Tags" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="20"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ViewCount]"
+                      dataType="i4"
+                      name="ViewCount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      dataType="nText"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Read CSV\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Posts_subset]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Read CSV\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.StackOverflow2010]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.StackOverflow2010]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AcceptedAnswerId]"
+                      cachedDataType="i4"
+                      cachedName="AcceptedAnswerId"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AcceptedAnswerId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[AcceptedAnswerId]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AnswerCount]"
+                      cachedDataType="i1"
+                      cachedName="AnswerCount"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AnswerCount]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[AnswerCount]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Body]"
+                      cachedDataType="nText"
+                      cachedName="Body"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Body]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Body]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ClosedDate]"
+                      cachedDataType="date"
+                      cachedName="ClosedDate"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClosedDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ClosedDate]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CommentCount]"
+                      cachedDataType="i1"
+                      cachedName="CommentCount"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CommentCount]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CommentCount]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CommunityOwnedDate]"
+                      cachedDataType="date"
+                      cachedName="CommunityOwnedDate"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CommunityOwnedDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CommunityOwnedDate]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CreationDate]"
+                      cachedDataType="date"
+                      cachedName="CreationDate"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreationDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[CreationDate]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FavoriteCount]"
+                      cachedDataType="i2"
+                      cachedName="FavoriteCount"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FavoriteCount]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[FavoriteCount]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastActivityDate]"
+                      cachedDataType="date"
+                      cachedName="LastActivityDate"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastActivityDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastActivityDate]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastEditDate]"
+                      cachedDataType="date"
+                      cachedName="LastEditDate"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEditDate]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditDate]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastEditorDisplayName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="LastEditorDisplayName"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEditorDisplayName]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditorDisplayName]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[LastEditorUserId]"
+                      cachedDataType="i4"
+                      cachedName="LastEditorUserId"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEditorUserId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[LastEditorUserId]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[OwnerUserId]"
+                      cachedDataType="i4"
+                      cachedName="OwnerUserId"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OwnerUserId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[OwnerUserId]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ParentId]"
+                      cachedDataType="i2"
+                      cachedName="ParentId"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ParentId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ParentId]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PostTypeId]"
+                      cachedDataType="i1"
+                      cachedName="PostTypeId"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostTypeId]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[PostTypeId]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Score]"
+                      cachedDataType="i2"
+                      cachedName="Score"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Score]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Tags]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="Tags"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tags]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Tags]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ViewCount]"
+                      cachedDataType="i4"
+                      cachedName="ViewCount"
+                      externalMetadataColumnId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ViewCount]"
+                      lineageId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output].Columns[ViewCount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AcceptedAnswerId]"
+                      dataType="i4"
+                      name="AcceptedAnswerId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AnswerCount]"
+                      dataType="i4"
+                      name="AnswerCount" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Body]"
+                      dataType="nText"
+                      name="Body" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ClosedDate]"
+                      dataType="dbTimeStamp"
+                      name="ClosedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CommentCount]"
+                      dataType="i4"
+                      name="CommentCount" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CommunityOwnedDate]"
+                      dataType="dbTimeStamp"
+                      name="CommunityOwnedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      name="CreationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FavoriteCount]"
+                      dataType="i4"
+                      name="FavoriteCount" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastActivityDate]"
+                      dataType="dbTimeStamp"
+                      name="LastActivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEditDate]"
+                      dataType="dbTimeStamp"
+                      name="LastEditDate" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      length="40"
+                      name="LastEditorDisplayName" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[LastEditorUserId]"
+                      dataType="i4"
+                      name="LastEditorUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[OwnerUserId]"
+                      dataType="i4"
+                      name="OwnerUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ParentId]"
+                      dataType="i4"
+                      name="ParentId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PostTypeId]"
+                      dataType="i4"
+                      name="PostTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Score]"
+                      dataType="i4"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Tags]"
+                      dataType="wstr"
+                      length="150"
+                      name="Tags" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="250"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ViewCount]"
+                      dataType="i4"
+                      name="ViewCount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Read CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Read CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Read CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Read CSV\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Read CSV.Paths[Flat File Source Output]"
+              endId="Package\Read CSV\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Read CSV\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Write CSV"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B2B023DE-FA70-45F1-9690-C53199C254F2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Write CSV"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Write CSV\Flat File Destination"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="8192"
+              name="Flat File Destination"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Write CSV\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File: WRITE posts.csv]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File: WRITE posts.csv]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[Id]"
+                      cachedDataType="i4"
+                      cachedName="Id"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Id]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[AcceptedAnswerId]"
+                      cachedDataType="i4"
+                      cachedName="AcceptedAnswerId"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AcceptedAnswerId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcceptedAnswerId]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[AnswerCount]"
+                      cachedDataType="i4"
+                      cachedName="AnswerCount"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AnswerCount]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[AnswerCount]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[Body]"
+                      cachedDataType="nText"
+                      cachedName="Body"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Body]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Body]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[ClosedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="ClosedDate"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ClosedDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClosedDate]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[CommentCount]"
+                      cachedDataType="i4"
+                      cachedName="CommentCount"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CommentCount]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CommentCount]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[CommunityOwnedDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CommunityOwnedDate"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CommunityOwnedDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CommunityOwnedDate]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[CreationDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="CreationDate"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CreationDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreationDate]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[FavoriteCount]"
+                      cachedDataType="i4"
+                      cachedName="FavoriteCount"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FavoriteCount]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[FavoriteCount]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[LastActivityDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastActivityDate"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastActivityDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastActivityDate]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[LastEditDate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="LastEditDate"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastEditDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditDate]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[LastEditorDisplayName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="LastEditorDisplayName"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastEditorDisplayName]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditorDisplayName]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[LastEditorUserId]"
+                      cachedDataType="i4"
+                      cachedName="LastEditorUserId"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastEditorUserId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditorUserId]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[OwnerUserId]"
+                      cachedDataType="i4"
+                      cachedName="OwnerUserId"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OwnerUserId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[OwnerUserId]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[ParentId]"
+                      cachedDataType="i4"
+                      cachedName="ParentId"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentId]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[PostTypeId]"
+                      cachedDataType="i4"
+                      cachedName="PostTypeId"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PostTypeId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostTypeId]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[Score]"
+                      cachedDataType="i4"
+                      cachedName="Score"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Score]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Score]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[Tags]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="Tags"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Tags]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tags]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[Title]"
+                      cachedDataType="wstr"
+                      cachedLength="250"
+                      cachedName="Title"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Title]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]" />
+                    <inputColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].Columns[ViewCount]"
+                      cachedDataType="i4"
+                      cachedName="ViewCount"
+                      externalMetadataColumnId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ViewCount]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ViewCount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Id]"
+                      dataType="i2"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AcceptedAnswerId]"
+                      dataType="i4"
+                      name="AcceptedAnswerId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AnswerCount]"
+                      dataType="i1"
+                      name="AnswerCount" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Body]"
+                      dataType="nText"
+                      name="Body" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ClosedDate]"
+                      dataType="date"
+                      name="ClosedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CommentCount]"
+                      dataType="i1"
+                      name="CommentCount" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CommunityOwnedDate]"
+                      dataType="date"
+                      name="CommunityOwnedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CreationDate]"
+                      dataType="date"
+                      name="CreationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FavoriteCount]"
+                      dataType="i2"
+                      name="FavoriteCount" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastActivityDate]"
+                      dataType="date"
+                      name="LastActivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastEditDate]"
+                      dataType="date"
+                      name="LastEditDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      length="40"
+                      name="LastEditorDisplayName" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[LastEditorUserId]"
+                      dataType="i4"
+                      name="LastEditorUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OwnerUserId]"
+                      dataType="i4"
+                      name="OwnerUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ParentId]"
+                      dataType="i2"
+                      name="ParentId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PostTypeId]"
+                      dataType="i1"
+                      name="PostTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Score]"
+                      dataType="i2"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Tags]"
+                      dataType="wstr"
+                      length="150"
+                      name="Tags" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="250"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ViewCount]"
+                      dataType="i4"
+                      name="ViewCount" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Write CSV\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Posts]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TOP 100
+[Id], 
+[AcceptedAnswerId], 
+[AnswerCount], 
+REPLACE(REPLACE([Body], CHAR(13), ''), CHAR(10), '') AS [Body], 
+[ClosedDate], 
+[CommentCount], 
+[CommunityOwnedDate], 
+[CreationDate], 
+[FavoriteCount], 
+[LastActivityDate], 
+[LastEditDate], 
+[LastEditorDisplayName], 
+[LastEditorUserId], 
+[OwnerUserId],
+[ParentId], 
+[PostTypeId], 
+[Score],
+[Tags],
+[Title], 
+[ViewCount]
+FROM dbo.Posts 
+ORDER BY id</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable">User::sql_posts</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Write CSV\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.StackOverflow2010]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.StackOverflow2010]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Id]"
+                      name="Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcceptedAnswerId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AcceptedAnswerId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[AcceptedAnswerId]"
+                      name="AcceptedAnswerId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[AnswerCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AnswerCount]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[AnswerCount]"
+                      name="AnswerCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Body]"
+                      dataType="nText"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Body]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Body]"
+                      name="Body"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClosedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClosedDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClosedDate]"
+                      name="ClosedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CommentCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CommentCount]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CommentCount]"
+                      name="CommentCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CommunityOwnedDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CommunityOwnedDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CommunityOwnedDate]"
+                      name="CommunityOwnedDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[CreationDate]"
+                      name="CreationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[FavoriteCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FavoriteCount]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[FavoriteCount]"
+                      name="FavoriteCount"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastActivityDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastActivityDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastActivityDate]"
+                      name="LastActivityDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditDate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastEditDate]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditDate]"
+                      name="LastEditDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastEditorDisplayName]"
+                      length="40"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditorDisplayName]"
+                      name="LastEditorDisplayName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditorUserId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastEditorUserId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[LastEditorUserId]"
+                      name="LastEditorUserId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[OwnerUserId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OwnerUserId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[OwnerUserId]"
+                      name="OwnerUserId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ParentId]"
+                      name="ParentId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostTypeId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostTypeId]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[PostTypeId]"
+                      name="PostTypeId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Score]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Score]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Score]"
+                      name="Score"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tags]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tags]"
+                      length="150"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tags]"
+                      name="Tags"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      length="250"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[Title]"
+                      name="Title"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ViewCount]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ViewCount]"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].Columns[ViewCount]"
+                      name="ViewCount"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Id]"
+                      dataType="i4"
+                      name="Id" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AcceptedAnswerId]"
+                      dataType="i4"
+                      name="AcceptedAnswerId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AnswerCount]"
+                      dataType="i4"
+                      name="AnswerCount" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Body]"
+                      dataType="nText"
+                      name="Body" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClosedDate]"
+                      dataType="dbTimeStamp"
+                      name="ClosedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CommentCount]"
+                      dataType="i4"
+                      name="CommentCount" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CommunityOwnedDate]"
+                      dataType="dbTimeStamp"
+                      name="CommunityOwnedDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      name="CreationDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FavoriteCount]"
+                      dataType="i4"
+                      name="FavoriteCount" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastActivityDate]"
+                      dataType="dbTimeStamp"
+                      name="LastActivityDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastEditDate]"
+                      dataType="dbTimeStamp"
+                      name="LastEditDate" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      length="40"
+                      name="LastEditorDisplayName" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LastEditorUserId]"
+                      dataType="i4"
+                      name="LastEditorUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[OwnerUserId]"
+                      dataType="i4"
+                      name="OwnerUserId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ParentId]"
+                      dataType="i4"
+                      name="ParentId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PostTypeId]"
+                      dataType="i4"
+                      name="PostTypeId" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Score]"
+                      dataType="i4"
+                      name="Score" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tags]"
+                      dataType="wstr"
+                      length="150"
+                      name="Tags" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Title]"
+                      dataType="wstr"
+                      length="250"
+                      name="Title" />
+                    <externalMetadataColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ViewCount]"
+                      dataType="i4"
+                      name="ViewCount" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Id]"
+                      name="Id" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AcceptedAnswerId]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AcceptedAnswerId]"
+                      name="AcceptedAnswerId" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AnswerCount]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AnswerCount]"
+                      name="AnswerCount" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Body]"
+                      dataType="nText"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Body]"
+                      name="Body" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClosedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClosedDate]"
+                      name="ClosedDate" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CommentCount]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CommentCount]"
+                      name="CommentCount" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CommunityOwnedDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CommunityOwnedDate]"
+                      name="CommunityOwnedDate" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CreationDate]"
+                      name="CreationDate" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FavoriteCount]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FavoriteCount]"
+                      name="FavoriteCount" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastActivityDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastActivityDate]"
+                      name="LastActivityDate" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastEditDate]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastEditDate]"
+                      name="LastEditDate" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastEditorDisplayName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastEditorDisplayName]"
+                      name="LastEditorDisplayName" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastEditorUserId]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LastEditorUserId]"
+                      name="LastEditorUserId" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OwnerUserId]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[OwnerUserId]"
+                      name="OwnerUserId" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentId]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ParentId]"
+                      name="ParentId" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostTypeId]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PostTypeId]"
+                      name="PostTypeId" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Score]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Score]"
+                      name="Score" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tags]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tags]"
+                      name="Tags" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      dataType="wstr"
+                      length="250"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Title]"
+                      name="Title" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ViewCount]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ViewCount]"
+                      name="ViewCount" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Write CSV.Paths[OLE DB Source Output]"
+              endId="Package\Write CSV\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Write CSV\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{0CB078CD-B84E-43ED-ACFF-44E3932BA9CC}"
+      DTS:From="Package\Write CSV"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Read CSV" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Read CSV"
+          TopLeft="56,270.75" />
+        <NodeLayout
+          Size="131,42"
+          Id="Package\Write CSV"
+          TopLeft="56,187.75" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="121.5,229.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Read CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Read CSV\Flat File Source"
+          TopLeft="352.5,113" />
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Read CSV\OLE DB Destination"
+          TopLeft="352.5,201" />
+        <EdgeLayout
+          Id="Package\Read CSV.Paths[Flat File Source Output]"
+          TopLeft="441,155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Read CSV\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Write CSV">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Write CSV\OLE DB Source"
+          TopLeft="229.5,137" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Write CSV\Flat File Destination"
+          TopLeft="229.5,258" />
+        <EdgeLayout
+          Id="Package\Write CSV.Paths[OLE DB Source Output]"
+          TopLeft="317.5,179">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,79"
+              Start="0,0"
+              End="0,71.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,71.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Write CSV\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

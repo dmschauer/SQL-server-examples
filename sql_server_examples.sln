@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31911.196
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSIS", "SSIS", "{E992DD27-FA78-4967-94BE-D8F6D9CD735F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSRS", "SSRS", "{29C64538-F075-493D-8738-0BEA82BF8A64}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SSDT", "SSDT", "{3482503F-15E3-4171-9169-4D52FDF57136}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "schema_compare", "schema_compare", "{CE722EBF-BEA9-4317-8196-652DB6E87100}"
+	ProjectSection(SolutionItems) = preProject
+		custom_resources\schema_compare\StackOverflow2010_DEV.scmp = custom_resources\schema_compare\StackOverflow2010_DEV.scmp
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "StackOverflow2010", "SSDT\StackOverflow2010\StackOverflow2010.sqlproj", "{B8BC75E6-F09E-487D-A652-88F507DBC54B}"
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "csv_files", "SSIS\csv_files\csv_files.dtproj", "{7986DF0A-1164-4F9B-B11F-51C2977C4689}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{7986DF0A-1164-4F9B-B11F-51C2977C4689}.Debug|Any CPU.ActiveCfg = Development
+		{7986DF0A-1164-4F9B-B11F-51C2977C4689}.Debug|Any CPU.Build.0 = Development
+		{7986DF0A-1164-4F9B-B11F-51C2977C4689}.Development|Any CPU.ActiveCfg = Development
+		{7986DF0A-1164-4F9B-B11F-51C2977C4689}.Development|Any CPU.Build.0 = Development
+		{7986DF0A-1164-4F9B-B11F-51C2977C4689}.Release|Any CPU.ActiveCfg = Development
+		{7986DF0A-1164-4F9B-B11F-51C2977C4689}.Release|Any CPU.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B8BC75E6-F09E-487D-A652-88F507DBC54B} = {3482503F-15E3-4171-9169-4D52FDF57136}
+		{7986DF0A-1164-4F9B-B11F-51C2977C4689} = {E992DD27-FA78-4967-94BE-D8F6D9CD735F}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {710AD0DF-73CD-4075-BE14-E57F7B2798EC}
+	EndGlobalSection
+EndGlobal
