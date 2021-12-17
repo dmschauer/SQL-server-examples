@@ -11,8 +11,8 @@
   DTS:LocaleID="8192"
   DTS:ObjectName="export_and_load_posts_csv"
   DTS:PackageType="5"
-  DTS:VersionBuild="119"
-  DTS:VersionGUID="{8E7BF5B6-FCEE-4368-BBFB-44AFB11C7A0E}">
+  DTS:VersionBuild="121"
+  DTS:VersionGUID="{71EB9446-26C8-494B-AF25-9CE4C6417AF0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -680,7 +680,7 @@
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:FileUsageType="1"
-          DTS:ConnectionString="C:\Users\domin\OneDrive\Dokumente\Git\visualstudioprojects\simple_examples\custom_resources\export_and_load_posts_csv_area\logs\Logs.log" />
+          DTS:ConnectionString="C:\Users\domin\OneDrive\Dokumente\Git\SQL-server-examples\custom_resources\export_and_load_posts_csv_area\logs\Logs.log" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -6327,7 +6327,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           PanelSize="203,125"
           Size="203,168"
           Id="Package\For Loop (num_files)"
-          TopLeft="258.75,186" />
+          TopLeft="42.75,82" />
         <NodeLayout
           Size="218,42"
           Id="Package\Foreach Loop (root)\move from root to processed"
@@ -6364,10 +6364,10 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
           PanelSize="296,226"
           Size="296,269"
           Id="Package\Foreach Loop (root)"
-          TopLeft="573,130.75" />
+          TopLeft="357,26.75" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="461.75,267.625">
+          TopLeft="245.75,163.625">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -6482,7 +6482,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6540,7 +6542,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6598,7 +6602,9 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -6620,14 +6626,16 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <AnnotationLayout
           Text="Error Handling:&#xA;https://docs.microsoft.com/en-us/sql/integration-services/lesson-4-4-adding-a-flat-file-destination?view=sql-server-ver15"
           ParentId="Package\Foreach Loop (root)\Read CSV"
           FontInfo="{assembly:Null}"
-          Size="261,88"
+          Size="261,NaN"
           Id="b924e658-8909-456f-aab1-20c3ca59e626"
           TopLeft="46.6055555555561,191.805555555555" />
       </GraphLayout>
